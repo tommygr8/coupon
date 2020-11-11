@@ -44,4 +44,8 @@ Note : instead of php artisan serve, you can create a virtual host and point to 
 
 ## About this project
 
-This project is aim to show how to dynamically add coupon to ecommerce site. It can be added to any ecommerce site. 
+This project is aim to show how to dynamically add coupon to ecommerce site. It can be added to any ecommerce site.
+Note that by default, the cart is picked randomly but if you wamt a particular cart, you can add /cart/{cartid} where {cartid} is the id of the cart you want to check with. e.g cart/2.
+The table carts contain all generated carts, the application generate about 20 carts, so you can use anyone to test for the coupon, in the carts table, we have the quantity which is the number of items in the cart, amount which is the total amount of the items in the cart and content which contains the array of items in serialized form. The carts are generated randomly. so you can check the cart to see the one to use for the test. if none of the generated carts meet the deman, you can regenerate the carts and everything by running this command 
+``` php artisan migrate:fresh --seed ``` 
+This command will regenerate your tables and data.
